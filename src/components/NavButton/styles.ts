@@ -1,6 +1,6 @@
-import style from 'styled-components';
+import styled from 'styled-components';
 
-export const Button = style.button`
+export const Button = styled.button`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,7 +18,7 @@ export const Button = style.button`
     }
 `;
 
-export const Text = style.p`
+export const Text = styled.p`
     margin: 0;
     padding: 0;
 `
