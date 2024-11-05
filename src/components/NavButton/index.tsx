@@ -1,5 +1,5 @@
 import { Icon } from "../../common/styles/images";
-import { Button, Text } from "./style";
+import { Button, Text } from "./styles";
 import { redirect } from "./logic";
 import { useConfigModal } from "../../store/configModal";
 
