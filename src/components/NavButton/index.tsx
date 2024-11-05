@@ -1,6 +1,7 @@
 import { Icon } from "../../common/styles/images";
-import { Button } from "./style";
-import { redirect, userModal } from "./logic";
+import { Button, Text } from "./style";
+import { redirect } from "./logic";
+import { useConfigModal } from "../../store/configModal";
 
 interface Props {
     text: string;
@@ -9,6 +10,8 @@ interface Props {
 }
 
 export default function NavButton({ text, imgPath, hrefText  }: Props) {
+    const { open } = useConfigModal();
+
     return (
         <Button
             onClick={
@@ -16,11 +19,11 @@ export default function NavButton({ text, imgPath, hrefText  }: Props) {
                 ?
                     () => redirect(hrefText)
                 :
-                    userModal
+                    open
             }
         >
             <Icon src={imgPath}/>
-            <p>{text}</p>
+            <Text>{text}</Text>
         </Button>
     )
 }
