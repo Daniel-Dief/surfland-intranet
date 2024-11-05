@@ -5,7 +5,6 @@ export const Container = styled.header`
     align-items: center;
     justify-content: center;
     height: 3.5rem;
-    background-color: red;
 `;
 
 export const List = styled.ul`
