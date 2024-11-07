@@ -28,10 +28,24 @@ export const VisibleIcon = styled.img`
     cursor: pointer;
     padding: 5px;
     border-radius: 5px;
-    transition: 0.3s ease-in-out;
+    transition: .3s ease-in-out;
     
     &:hover {
         border-radius: 10px;
         background-color: rgba(0, 0, 0, 0.1);
     }
-`
+`;
+
+export const Button = styled.input`
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: .75rem;
+    border-radius: 15px;
+    width: 10rem;
+    transition: background-color .3s ease-in-out;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+`;
