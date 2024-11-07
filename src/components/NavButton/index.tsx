@@ -1,7 +1,7 @@
 import { Icon } from "../../common/styles/images";
 import { Button, Text } from "./styles";
 import { redirect } from "./logic";
-import { useConfigModal } from "../../store/configModal";
+import { useModalActive } from "../../store/modalActive";
 
 interface Props {
     text: string;
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function NavButton({ text, imgPath, hrefText  }: Props) {
-    const { open } = useConfigModal();
+    const { open } = useModalActive();
 
     return (
         <Button
@@ -19,7 +19,7 @@ export default function NavButton({ text, imgPath, hrefText  }: Props) {
                 ?
                     () => redirect(hrefText)
                 :
-                    open
+                    () => open("login")
             }
         >
             <Icon src={imgPath}/>

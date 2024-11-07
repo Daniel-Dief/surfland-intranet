@@ -6,11 +6,11 @@ import InputSubmit from "../../components/Inputs/Submit"
 import { Container, TitleBox, Title, CloseButton, Form } from "./style";
 
 import Submit from "./logic/submit";
-import { useConfigModal } from "../../store/configModal";
+import { useModalActive } from "../../store/modalActive";
 
 export default function LoginModal() {
     const [ loginRef, passwordRef ] = [ useRef<HTMLInputElement>(null), useRef<HTMLInputElement>(null) ];
-    const { close : closeModal} = useConfigModal();
+    const { close : closeModal} = useModalActive();
 
     function handleSubmit(e: FormEvent) {
         e.preventDefault();
