@@ -16,7 +16,7 @@ export default function Header() {
                     <NavButton
                         text="Sessões"
                         imgPath={require("../../assets/images/ticket.png")}
-                        hrefText="Sessions"
+                        hrefText="MySessions"
                     />
                 </li>
                 <li>
