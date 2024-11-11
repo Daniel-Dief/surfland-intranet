@@ -17,7 +17,7 @@ export const Form = styled.form`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 30%;
+    width: calc(100% / 3);
     height: 60%;
     gap: 5rem;
     border-radius: 10px;
@@ -38,11 +38,4 @@ export const Confirm = styled.button`
     &:hover {
         background-color: rgb(0, 0, 0, 0.2);
     }
-`;
-
-export const TempCalendar = styled.div`
-    background-color: red;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
 `;
