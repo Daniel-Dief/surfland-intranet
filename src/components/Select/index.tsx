@@ -1,3 +1,4 @@
+import { RefObject } from "react";
 import { SelectBox } from "./style";
 
 interface Options {
@@ -5,9 +6,16 @@ interface Options {
     value: string;
 }
 
-export default function Select({ options }: { options: Array<Options> }) {
+interface Props {
+    selectRef: RefObject<HTMLSelectElement>;
+    options: Array<Options>;
+}
+
+export default function Select({ selectRef, options } : Props ) {
     return (
-        <SelectBox>
+        <SelectBox
+            ref={ selectRef }
+        >
             {options.map((option, index) => (
                 <option key={index} value={option.value}>
                     {option.label}
