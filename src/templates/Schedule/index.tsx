@@ -13,9 +13,11 @@ export default function Schedule() {
 
     function handleSubmit(e: FormEvent) {
         e.preventDefault();
-        console.log("Agendado", selectedDate?.toISOString());
-        console.log("Wave", waveRef.current?.value);
-        console.log("Hour", hourRef.current?.value);
+        console.log({
+            wave: waveRef.current?.value,
+            hour: hourRef.current?.value,
+            date: selectedDate?.toISOString()
+        })
     }
 
     return(
