@@ -18,7 +18,7 @@ export const Form = styled.form`
     align-items: center;
     justify-content: center;
     width: calc(100% / 3);
-    height: 60%;
+    padding: 2rem 0;
     gap: 5rem;
     border-radius: 10px;
 `;
