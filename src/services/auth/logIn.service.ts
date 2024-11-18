@@ -1,6 +1,6 @@
 import { UserDTO } from '../../DTO/authDTO';
 import { axiosClient } from '../../network/appClient';
-import { handleResponse } from './utils.service';
+import { handleResponse } from '../utils.service';
 
 interface LoginProps {
     login: string;

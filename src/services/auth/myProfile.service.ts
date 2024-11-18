@@ -1,7 +1,7 @@
 import { UserDTO } from '../../DTO/authDTO';
 import { axiosClient } from '../../network/appClient';
 import useToken from '../../store/useToken';
-import { handleResponse } from './utils.service';
+import { handleResponse } from '../utils.service';
 
 interface ResponseProps {
     profile?: UserDTO;

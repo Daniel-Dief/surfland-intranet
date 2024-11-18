@@ -1,5 +1,5 @@
 import { axiosClient } from "../../network/appClient";
-import { handleResponse } from "./utils.service";
+import { handleResponse } from "../utils.service";
 import { UserDTO } from "../../DTO/authDTO";
 
 interface Props {

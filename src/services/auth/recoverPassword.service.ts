@@ -1,4 +1,4 @@
-import { handleResponse } from "./utils.service";
+import { handleResponse } from "../utils.service";
 import { axiosClient } from "../../network/appClient";
 import useToken from "../../store/useToken";
 import { UserDTO } from "../../DTO/authDTO";

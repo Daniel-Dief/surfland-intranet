@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios';
-import useToken from '../../store/useToken';
+import useToken from '../store/useToken';
 
 interface ErrorResponse {
     status: number;
