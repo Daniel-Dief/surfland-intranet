@@ -34,6 +34,6 @@ export interface UserDTO {
     email : string,
     phone : string,
     foreigner : number,
-    accessProfileId : AccessProfileDTO,
-    statusId : StatusDTO
+    accessProfileId : AccessProfileDTO | null,
+    statusId : StatusDTO | null
 }

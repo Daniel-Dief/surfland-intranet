@@ -1,23 +1,17 @@
 import { AxiosResponse } from 'axios';
 import useToken from '../store/useToken';
+import IAPIResponse from '../DTO/IAPIResponse';
 
-interface ErrorResponse {
-    status: number;
-    parameter: string;
-}
-
-export function handleResponse<T>(rawResponse: AxiosResponse<ErrorResponse | T>) : [T, null] | [null, string] {
-    const body = rawResponse.data!;
+export function handleResponse<T>(rawResponse: AxiosResponse<IAPIResponse<T>>) : IAPIResponse<T> {
+    const body : IAPIResponse<T> = rawResponse.data;
 
     if (rawResponse.status === 401) {
         useToken.getState().setToken(null);
-        return [null, 'Internal.SessionExpired'];
     }
 
-    if (typeof body === 'object' && 'status' in body) {
-        const errorResponse = body as ErrorResponse;
-        return [null, errorResponse.parameter];
+    if(!body.status) {
+        console.error(body.message);
     }
 
-    return [body, null];   
+    return body;
 }

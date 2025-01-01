@@ -7,19 +7,16 @@ interface Props {
     text: string;
     imgPath: string;
     hrefText?: string;
+    onClick?: () => void;
 }
 
-export default function NavButton({ text, imgPath, hrefText  }: Props) {
-    const { open } = useModalActive();
-
+export default function NavButton({ text, imgPath, hrefText, onClick }: Props) {
     return (
         <Button
             onClick={
-                hrefText
-                ?
-                    () => redirect(hrefText)
-                :
-                    () => open("login")
+                hrefText ?
+                () => redirect(hrefText) :
+                onClick
             }
         >
             <Icon src={imgPath}/>

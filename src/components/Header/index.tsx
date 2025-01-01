@@ -1,7 +1,12 @@
 import { Container, List } from './styles'
 import NavButton from '../NavButton'
+import useUser from '../../store/useUser'
+import { useModalActive } from '../../store/modalActive'
 
 export default function Header() {
+    const { open } = useModalActive()
+    const loggedUser = useUser()
+    
     return (
         <Container>
             <List>
@@ -21,8 +26,13 @@ export default function Header() {
                 </li>
                 <li>
                     <NavButton
-                        text="Usuário"
+                        text = {loggedUser.userId !== 0 ? loggedUser.userId.toString() : "Login"}
                         imgPath={require("../../assets/images/user.png")}
+                        onClick={
+                            loggedUser.userId !== 0
+                            ? () => alert("logado")
+                            : () => open("login")
+                        }
                     />
                 </li>
             </List>
